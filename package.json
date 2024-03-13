@@ -2,7 +2,7 @@
   "author": "tmmgn",
   "name": "unity-react-datepicker",
   "description": "A simple and reusable datepicker component for React",
-  "version": "6.3.1",
+  "version": "6.3.2",
   "license": "MIT",
   "homepage": "https://github.com/unity-systems/unity-react-datepicker",
   "main": "dist/index.js",
