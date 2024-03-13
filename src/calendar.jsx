@@ -322,7 +322,7 @@ export default class Calendar extends React.Component {
 
   handleDayClick = (day, event, monthSelectedIn) => {
     this.props.onSelect(day, event, monthSelectedIn);
-    this.props.setPreSelection && this.props.setPreSelection(day);
+    // this.props.setPreSelection && this.props.setPreSelection(day);
   };
 
   handleDayMouseEnter = (day) => {
@@ -331,12 +331,12 @@ export default class Calendar extends React.Component {
   };
 
   handleMonthMouseLeave = () => {
-    this.setState({ selectingDate: null });
+    this.setState({ selectingDate: this.props.startDate });
     this.props.onMonthMouseLeave && this.props.onMonthMouseLeave();
   };
 
   handleYearMouseEnter = (event, year) => {
-    this.setState({ selectingDate: setYear(newDate(), year) });
+    // this.setState({ selectingDate: setYear(newDate(), year) });
     !!this.props.onYearMouseEnter && this.props.onYearMouseEnter(event, year);
   };
 
@@ -358,7 +358,7 @@ export default class Calendar extends React.Component {
       }
     }
 
-    this.props.setPreSelection && this.props.setPreSelection(date);
+    // this.props.setPreSelection && this.props.setPreSelection(date);
   };
 
   handleMonthChange = (date) => {
@@ -372,7 +372,7 @@ export default class Calendar extends React.Component {
       }
     }
 
-    this.props.setPreSelection && this.props.setPreSelection(date);
+    // this.props.setPreSelection && this.props.setPreSelection(date);
   };
 
   handleCustomMonthChange = (date) => {

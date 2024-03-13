@@ -64,9 +64,7 @@ const WrappedCalendar = onClickOutside(Calendar);
 // Compares dates year+month combinations
 function hasPreSelectionChanged(date1, date2) {
   if (date1 && date2) {
-    return (
-      getMonth(date1) !== getMonth(date2) || getYear(date1) !== getYear(date2)
-    );
+    return getYear(date1) !== getYear(date2);
   }
 
   return date1 !== date2;
@@ -698,7 +696,7 @@ export default class DatePicker extends React.Component {
           onChange([changedDate, null], event);
         } else if (hasStartRange) {
           if (isDateBefore(changedDate, startDate)) {
-            onChange([changedDate, null], event);
+            onChange([changedDate, startDate], event);
           } else {
             onChange([startDate, changedDate], event);
           }

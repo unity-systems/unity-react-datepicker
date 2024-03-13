@@ -1,9 +1,9 @@
 # React Date Picker
 
-[![npm version](https://badge.fury.io/js/react-datepicker.svg)](https://badge.fury.io/js/react-datepicker)
+[![npm version](https://badge.fury.io/js/unity-react-datepicker.svg)](https://badge.fury.io/js/unity-react-datepicker)
 [![Test suite](https://github.com/Hacker0x01/react-datepicker/actions/workflows/test.yml/badge.svg)](https://github.com/Hacker0x01/react-datepicker/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/Hacker0x01/react-datepicker/branch/main/graph/badge.svg)](https://codecov.io/gh/Hacker0x01/react-datepicker)
-[![Downloads](https://img.shields.io/npm/dm/react-datepicker.svg)](https://npmjs.org/package/react-datepicker)
+[![Downloads](https://img.shields.io/npm/dm/react-datepicker.svg)](https://npmjs.org/package/unity-react-datepicker)
 
 A simple and reusable Datepicker component for React ([Demo](https://reactdatepicker.com/))
 
@@ -14,20 +14,20 @@ A simple and reusable Datepicker component for React ([Demo](https://reactdatepi
 The package can be installed via [npm](https://github.com/npm/cli):
 
 ```
-npm install react-datepicker --save
+npm install unity-react-datepicker --save
 ```
 
 Or via [yarn](https://github.com/yarnpkg/yarn):
 
 ```
-yarn add react-datepicker
+yarn add unity-react-datepicker
 ```
 
 You’ll need to install React and PropTypes separately since those dependencies aren’t included in the package. If you need to use a locale other than the default en-US, you'll also need to import that into your project from date-fns (see Localization section below). Below is a simple example of how to use the Datepicker in a React view. You will also need to require the CSS file from this package (or provide your own). The example below shows how to include the CSS from this package if your build system supports requiring CSS files (Webpack is one that does).
 
 ```js
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
+import DatePicker from "unity-react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -90,8 +90,8 @@ The date picker relies on [date-fns internationalization](https://date-fns.org/v
 - **getDefaultLocale**: returns a string showing the currently set default locale
 
 ```js
-import { registerLocale, setDefaultLocale } from  "react-datepicker";
-import { es } from 'date-fns/locale/es';
+import { registerLocale, setDefaultLocale } from  "unity-react-datepicker";
+import es from 'date-fns/locale/es';
 registerLocale('es', es)
 
 <DatePicker
