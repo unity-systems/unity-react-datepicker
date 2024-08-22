@@ -39,15 +39,21 @@
   // Eliminating extra space at the bottom of the container
   line-height: 0;
 
+  .react-datepicker__triangle {
+    stroke: $datepicker__border-color;
+  }
+
   &[data-placement^="bottom"] {
     .react-datepicker__triangle {
-      @extend %triangle-arrow-up;
+      fill: $datepicker__background-color;
+      color: $datepicker__background-color;
     }
   }
 
   &[data-placement^="top"] {
     .react-datepicker__triangle {
-      @extend %triangle-arrow-down;
+      fill: #fff;
+      color: #fff;
     }
   }
 }
@@ -92,6 +98,11 @@
   color: $datepicker__header-color;
   font-weight: bold;
   font-size: $datepicker__font-size * 1.18;
+}
+
+h2.react-datepicker__current-month {
+  padding: 0;
+  margin: 0;
 }
 
 .react-datepicker-time__header {
@@ -391,7 +402,7 @@
 .react-datepicker__year-text {
   cursor: pointer;
 
-  &:hover {
+  &:not([aria-disabled="true"]):hover {
     border-radius: $datepicker__border-radius;
     background-color: $datepicker__background-color;
   }
@@ -405,7 +416,7 @@
     background-color: $datepicker__highlighted-color;
     color: #fff;
 
-    &:hover {
+    &:not([aria-disabled="true"]):hover {
       background-color: darken($datepicker__highlighted-color, 5%);
     }
 
@@ -441,7 +452,7 @@
         opacity 0.3s ease-in-out;
     }
 
-    &:hover {
+    &:not([aria-disabled="true"]):hover {
       background-color: darken($datepicker__holidays-color, 10%);
     }
 
@@ -458,7 +469,7 @@
     background-color: $datepicker__selected-color;
     color: #fff;
 
-    &:hover {
+    &:not([aria-disabled="true"]):hover {
       background-color: darken($datepicker__selected-color, 5%);
     }
   }
@@ -468,7 +479,7 @@
     background-color: lighten($datepicker__selected-color, 45%);
     color: rgb(0, 0, 0);
 
-    &:hover {
+    &:not([aria-disabled="true"]):hover {
       background-color: darken($datepicker__selected-color, 5%);
     }
   }
@@ -488,10 +499,6 @@
   &--disabled {
     cursor: default;
     color: $datepicker__muted-color;
-
-    &:hover {
-      background-color: transparent;
-    }
 
     .overlay {
       position: absolute;

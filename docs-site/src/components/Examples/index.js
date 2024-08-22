@@ -31,6 +31,7 @@ import ExcludeDates from "../../examples/excludeDates";
 import ExcludedWithMessage from "../../examples/excludeDatesWithMessage";
 import ExcludeDateIntervals from "../../examples/excludeDateIntervals";
 import ExcludeDatesMonthPicker from "../../examples/excludeDatesMonthPicker";
+import ExcludeDatesRangeMonthPicker from "../../examples/excludeDatesRangeMonthPicker";
 import HighlightDates from "../../examples/highlightDates";
 import HolidayDates from "../../examples/holidayDates";
 import HighlightDatesRanges from "../../examples/highlightDatesRanges";
@@ -81,6 +82,7 @@ import TimeInput from "../../examples/timeInput";
 import StrictParsing from "../../examples/strictParsing";
 import MonthPicker from "../../examples/monthPicker";
 import WeekPicker from "../../examples/weekPicker";
+import ExcludeWeeks from "../../examples/excludeWeeks";
 import monthPickerFullName from "../../examples/monthPickerFullName";
 import monthPickerTwoColumns from "../../examples/monthPickerTwoColumns";
 import monthPickerFourColumns from "../../examples/monthPickerFourColumns";
@@ -102,9 +104,11 @@ import CalendarStartDay from "../../examples/calendarStartDay";
 import ExternalForm from "../../examples/externalForm";
 import CalendarIcon from "../../examples/calendarIcon";
 import SelectsMultiple from "../../examples/selectsMultiple";
+import SelectsMultipleMonths from "../../examples/selectsMultipleMonths";
 import CalendarIconExternal from "../../examples/calendarIconExternal";
 import CalendarIconSvgIcon from "../../examples/calendarIconSvgIcon";
 import ToggleCalendarOnIconClick from "../../examples/toggleCalendarOnIconClick";
+import SwapRange from "../../examples/rangeSwapRange";
 
 import "./style.scss";
 import "react-datepicker/dist/react-datepicker.css";
@@ -286,6 +290,10 @@ export default class exampleComponents extends React.Component {
       component: ExcludeDatesMonthPicker,
     },
     {
+      title: "Exclude Months in Range Month Picker",
+      component: ExcludeDatesRangeMonthPicker,
+    },
+    {
       title: "Exclude Times",
       component: ExcludeTimes,
     },
@@ -462,6 +470,12 @@ export default class exampleComponents extends React.Component {
       component: RangeQuarterPickerSelectsRange,
     },
     {
+      title: "Range Swap Range",
+      description:
+        "Swap the start and end date if the end date is before the start date in a pick sequence.",
+      component: SwapRange,
+    },
+    {
       title: "Read only datepicker",
       component: ReadOnly,
     },
@@ -488,6 +502,10 @@ export default class exampleComponents extends React.Component {
     {
       title: "Select multiple dates",
       component: SelectsMultiple,
+    },
+    {
+      title: "Select multiple months",
+      component: SelectsMultipleMonths,
     },
     {
       title: "Strict parsing",
@@ -532,6 +550,10 @@ export default class exampleComponents extends React.Component {
     {
       title: "Week Picker",
       component: WeekPicker,
+    },
+    {
+      title: "Exclude Weeks",
+      component: ExcludeWeeks,
     },
     {
       title: "External Form",

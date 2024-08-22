@@ -1,17 +1,13 @@
 module.exports = {
-  roots: ["./test"],
-  setupFiles: ["<rootDir>/test/text_encoder.js"],
-  setupFilesAfterEnv: ["<rootDir>/test/index.js"],
+  roots: ["./src/test"],
+  setupFilesAfterEnv: ["<rootDir>/src/test/index.ts"],
+  preset: "ts-jest",
   testEnvironment: "jest-environment-jsdom",
+  collectCoverage: true,
+  coverageReporters: ["json", "lcov", "text", "clover"],
   collectCoverageFrom: [
-    "**/*.{js,jsx}",
+    "**/*.{js,jsx,ts,tsx}",
     "!**/node_modules/**",
     "!**/vendor/**",
   ],
-  transformIgnorePatterns: ["/node_modules/(?!date-fns)"],
-  transform: {
-    "^.+\\.(js|jsx)$": "babel-jest",
-    "^.+\\.ts?$": "ts-jest",
-    "node_modules/(?!date-fns/.*)": "ts-jest",
-  },
 };

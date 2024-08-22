@@ -30,8 +30,6 @@ jobs:
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -44,14 +42,21 @@ jobs:
       - name: Check Code Formatter
         run: yarn prettier:check
 
+      - name: Type Check
+        run: yarn type-check
+
       - name: Lint
         run: yarn lint
 
       - name: Test
         run: yarn test:ci
 
-      - name: Codecov
-        run: yarn run codecov --disable=gcov
+      - uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
 
       - name: Build
         run: yarn build
