@@ -327,6 +327,8 @@ export default class Day extends Component<DayProps> {
     ) {
       return isDayInRange(day, startDate, selectingDate);
     }
+
+    return false;
   };
 
   isSelectingRangeStart = () => {
@@ -342,7 +344,9 @@ export default class Day extends Component<DayProps> {
     } else {
       return isSameDay(
         day,
-        isBefore(selectingDate, startDate) ? selectingDate : startDate,
+        selectingDate && startDate && isBefore(selectingDate, startDate)
+          ? selectingDate
+          : startDate,
       );
     }
   };
@@ -358,7 +362,9 @@ export default class Day extends Component<DayProps> {
     if (selectsEnd || selectsRange) {
       return isSameDay(
         day,
-        isBefore(selectingDate, startDate) ? startDate : selectingDate,
+        selectingDate && startDate && isBefore(selectingDate, startDate)
+          ? startDate
+          : selectingDate,
       );
     } else {
       return isSameDay(day, endDate);
